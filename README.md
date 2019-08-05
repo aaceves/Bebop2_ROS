@@ -6,8 +6,11 @@ Tutorial de como instalar y usar los drones BeBop2 dentro de ROS con la intensi�
 ## Pre-requisitos
 Se considera que la computadora del usuario ya tiene correctamente instalado ROS, GIT y que ya tiene la carpeta de `catkin_ws` correctamente inicializada.
 
-Deberá contar con un drone BeBop2 de Parrot:
-* Un servomotor [Dynamixel](http://www.robotis.us/dynamixel/) (ejemplo: Mx-28 Mx-106, etc.)
+Deberá contar con un drone BeBop1 o BeBop2 de Parrot [http://www.parrot.com/].
+<p align="center">
+  <img width="460" height="300" src="http://wiki.ros.org/bebop_autonomy?action=AttachFile&do=get&target=bebop_1.jpg">
+</p>
+
 
    
 
