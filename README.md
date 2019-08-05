@@ -29,7 +29,7 @@ El proceso de compilación debe terminar sin errores.
 ## Conectarse al dron mediante un nodo de ROS
 Primero se debe encender el dron Bebop. Después de unos segundos, el drone levantará una mini-red WiFi con el nombre de ```Bebop``` seguido de un número (ejemplo: BeBop2-097345). Con la computadora conéctarse a dicha red del dron. No necesitará password. Una vez conectado verifique la dirección IP de su computadora (para un Bebop2, la dirección de la computadora es la 192.168.42.60. El dron tendrá la dirección 192.168.42.1).
 
-En una Terminal de la computadora, ejecutar el siguiente nodo
+En una Terminal de la computadora, ejecutar el siguiente nodo:
 ```
 roslaunch bebop_driver bebop_node.launch
 ```
@@ -39,7 +39,20 @@ roslaunch bebop_tools bebop_nodelet_iv.launch
 ```
 Para ambos casos, se sugiere subscribirse al tópico ```image_view/image``` para observar en tiemporeal la imágen de la cámara del Bebop.
 
-Estos programas se pueden usar como base para programas más complejos, pero eso requiere de mayor conocimiento del uso de los servomotores. Se sugiere leer las referencias [2-5] para mayores detalles.
+## Enviar comandos al Bebop
+
+Takeoff
+```
+rostopic pub --once [namespace]/takeoff std_msgs/Empty
+```
+Land
+```
+$ rostopic pub --once [namespace]/land std_msgs/Empty
+```
+Otros comandos más complejos se pueden ejecutar siguiendo los pasos explicados en https://bebop-autonomy.readthedocs.io/en/latest/piloting.html.
+
+
+Estos programas se pueden usar como base para programas más complejos, pero eso requiere de mayor conocimiento del uso de los tópicos de BeBop. Se sugiere leer las referencias [1-4] para mayores detalles.
 
 ## Autores y colaboradores
 Ese paquete fue desarrollado en base a los programas originalmente publicados por Autonomy Lab en [1] y [2], pero fue ajustado ligeramente por el Dr. Alejandro Aceves-López para que sea más comprensible a los programadores nuevos de ROS.
