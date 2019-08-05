@@ -6,10 +6,7 @@ Tutorial de como instalar y usar los drones BeBop2 dentro de ROS con la intensi�
 ## Pre-requisitos
 Se considera que la computadora del usuario ya tiene correctamente instalado ROS, GIT y que ya tiene la carpeta de `catkin_ws` correctamente inicializada.
 
-También se necesita haber instalado los paquetes: ```build-esstential```, ```python-rosdep``` y  ```python-catkin-tools```. En caso que aun no los haya instalado ejecutar el siguiente commando:
-```
-sudo apt-get install build-essential python-rosdep python-catkin-tools
-```
+También se necesita haber instalado los paquetes: ```build-esstential```, ```python-rosdep``` y  ```python-catkin-tools```. En caso que aun no los haya instalado ejecutar el siguiente commando: ```sudo apt-get install build-essential python-rosdep python-catkin-tools```.
 
 Deberá contar con un drone BeBop1 o BeBop2 de Parrot [http://www.parrot.com/].
 <p align="center">
@@ -30,7 +27,7 @@ El proceso de compilación debe terminar sin errores.
 
 
 ## Conectarse al dron mediante un nodo de ROS
-Primero se debe encender el dron Bebop. Después de uno segundo el drone levantará una mini-red WiFi con el nombre de Bebop seguido de un número (ejemplo: BeBop2-097345). Con la computadora conéctarse a dicha red del dron. No necesitará password. Una vez conectado verifique la dirección IP de su computadora (para un Bebop2, la dirección de la computadora es la 192.168.42.60. El dron tendrá la dirección 192.168.42.1).
+Primero se debe encender el dron Bebop. Después de unos segundos, el drone levantará una mini-red WiFi con el nombre de ```Bebop``` seguido de un número (ejemplo: BeBop2-097345). Con la computadora conéctarse a dicha red del dron. No necesitará password. Una vez conectado verifique la dirección IP de su computadora (para un Bebop2, la dirección de la computadora es la 192.168.42.60. El dron tendrá la dirección 192.168.42.1).
 
 En una terminal de la computadora, ejecutar el siguiente nodo
 ```
