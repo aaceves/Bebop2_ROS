@@ -52,7 +52,7 @@ $ rostopic pub --once bebop/land std_msgs/Empty
 Otros comandos más complejos se pueden ejecutar siguiendo los pasos explicados en https://bebop-autonomy.readthedocs.io/en/latest/piloting.html.
 
 
-Estos programas se pueden usar como base para programas más complejos, pero eso requiere de mayor conocimiento del uso de los tópicos de BeBop. Se sugiere leer las referencias [1-4] para mayores detalles.
+Esta información se pueden usar como base para programas más complejos, pero eso requiere de mayor conocimiento del uso de los tópicos de BeBop. Se sugiere leer las referencias [1-4] para mayores detalles.
 
 ## Autores y colaboradores
 Ese paquete fue desarrollado en base a los programas originalmente publicados por Autonomy Lab en [1] y [2], pero fue ajustado ligeramente por el Dr. Alejandro Aceves-López para que sea más comprensible a los programadores nuevos de ROS.
