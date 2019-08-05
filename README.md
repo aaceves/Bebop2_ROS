@@ -8,9 +8,9 @@ Se considera que la computadora del usuario ya tiene correctamente instalado ROS
 
 Deberá contar con un drone BeBop1 o BeBop2 de Parrot [http://www.parrot.com/].
 <p align="center">
-  <img width="460" height="300" src="http://wiki.ros.org/bebop_autonomy?action=AttachFile&do=get&target=bebop_1.jpg">
+  <img width="300" height="200" src="http://wiki.ros.org/bebop_autonomy?action=AttachFile&do=get&target=bebop_1.jpg">
+  <img width="300" height="200" src="https://www.parrot.com/files/s3fs-public/styles/product_teaser_display/public/ps/3495-large-parrot-3495jpg.jpg?itok=TGE8SI4T">
 </p>
-
 
    
 
