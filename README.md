@@ -6,7 +6,7 @@ Tutorial de como instalar y usar los drones BeBop2 dentro de ROS con la intensi√
 ## Pre-requisitos
 Se considera que la computadora del usuario ya tiene correctamente instalado ROS, GIT y que ya tiene la carpeta de `catkin_ws` correctamente inicializada.
 
-Haber instalado los paquetes: ```build-esstential```, ```python-rosdep``` y  ```python-catkin-tools```. En caso que aun no los haya instalado ejecutar el siguiente commando:
+Tambi√©n se necesita haber instalado los paquetes: ```build-esstential```, ```python-rosdep``` y  ```python-catkin-tools```. En caso que aun no los haya instalado ejecutar el siguiente commando:
 ```
 sudo apt-get install build-essential python-rosdep python-catkin-tools
 ```
