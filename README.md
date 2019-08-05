@@ -49,13 +49,12 @@ Land
 ```
 $ rostopic pub --once bebop/land std_msgs/Empty
 ```
-Otros comandos más complejos se pueden ejecutar siguiendo los pasos explicados en https://bebop-autonomy.readthedocs.io/en/latest/piloting.html.
-
+Otros comandos más complejos se pueden ejecutar siguiendo los pasos explicados en [2] en la sección "Sending Commands to Bebop".
 
 Esta información se pueden usar como base para programas más complejos, pero eso requiere de mayor conocimiento del uso de los tópicos de BeBop. Se sugiere leer las referencias [1-5] para mayores detalles.
 
 ## Autores y colaboradores
-Ese paquete fue desarrollado en base a los programas originalmente publicados por Autonomy Lab en [1] y [2], pero fue ajustado ligeramente por el Dr. Alejandro Aceves-López para que sea más comprensible a los programadores nuevos de ROS.
+Ese paquete fue desarrollado en base al material originalmente publicado en [1] y [2] por Mani Monajjemi de Autonomy Lab, pero fue ajustado ligeramente por el Dr. Alejandro Aceves-López para que sea más comprensible a los programadores nuevos de ROS.
 
 ## Referencias
 1.  Mani Monajjemi, "Bebop autonomy - ROS driver for Parrot Bebop Drones 1.0 & 2.0", from Autonomy Lab, Simon Fraser University, [Online], Available: https://github.com/AutonomyLab/bebop_autonomy, [Accessed: 03-Aug-2019].
