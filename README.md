@@ -6,46 +6,42 @@ Tutorial de como instalar y usar los drones BeBop2 dentro de ROS con la intensi�
 ## Pre-requisitos
 Se considera que la computadora del usuario ya tiene correctamente instalado ROS, GIT y que ya tiene la carpeta de `catkin_ws` correctamente inicializada.
 
+Haber instalado los paquetes: ```build-esstential```, ```python-rosdep``` y  ```python-catkin-tools```. En caso que aun no los haya instalado ejecutar el siguiente commando:
+```
+sudo apt-get install build-essential python-rosdep python-catkin-tools
+```
+
 Deberá contar con un drone BeBop1 o BeBop2 de Parrot [http://www.parrot.com/].
 <p align="center">
-  <img width="300" height="200" src="http://wiki.ros.org/bebop_autonomy?action=AttachFile&do=get&target=bebop_1.jpg">
+  <img width="280" height="180" src="http://wiki.ros.org/bebop_autonomy?action=AttachFile&do=get&target=bebop_1.jpg">
   <img width="300" height="200" src="https://www.parrot.com/files/s3fs-public/styles/product_teaser_display/public/ps/3495-large-parrot-3495jpg.jpg?itok=TGE8SI4T">
 </p>
-
-   
 
 ## Proceso de instalación
 En una Terminal ejecutar las siguientes instrucciones:
 ```
-cd ~
-git clone https://github.com/ROBOTIS-GIT/DynamixelSDK.git
-```
-
-
-
-## Ejemplos de programas de usuario en ROS
-Se creó un paquete llamada `example_dynamixel` con algunos programas basados en los ejemplos presentados en sitio de ROBOTIS GIT - Dinamixel SDK [7] dentro de la carpeta `c++/example/protocol1.0/`. Dichos programas utilizan la librería `dynamixel_sdk` previamente creada. 
-
-Para instalar el paquete `example_dynamixel` ejecutar las siguientes instrucciones: 
-```
-cd ~/catkin_ws/src
-git clone https://github.com/aaceves/example_dynamixel.git
-cd ~/catkin_ws
+cd catkin_ws/src
+git clone https://github.com/AutonomyLab/bebop_autonomy.git src/bebop_autonomy
+rosdep update
+rosdep install --from-paths src -i
 catkin build
-source devel/setup.bash
 ```
-Se habrán dado de alta los siguientes nodos:
+El proceso de compilación debe terminar sin errores.
 
-| <node_name> | Descripción | ./src/file |
-| --- | --- | --- |
-| read_write | Mueve el servo 1 de un lado al otro. El baudrate del servomotor debe ser 57600. | read_write.cpp | 
-| ping | Ejecuta el comando ping a los ID = 1, 2 y 3 en un baudrate de 1000000 | ping.cpp | 
 
-En dos Terminales diferentes ejecutar cada una de las siguientes lineas:
+## Conectarse al dron mediante un nodo de ROS
+Primero se debe encender el dron Bebop. Después de uno segundo el drone levantará una mini-red WiFi con el nombre de Bebop seguido de un número (ejemplo: BeBop2-097345). Con la computadora conéctarse a dicha red del dron. No necesitará password. Una vez conectado verifique la dirección IP de su computadora (para un Bebop2, la dirección de la computadora es la 192.168.42.60. El dron tendrá la dirección 192.168.42.1).
+
+En una terminal de la computadora, ejecutar el siguiente nodo
 ```
-roscore
-rosrun example_dynamixel <node_name>
+roslaunch bebop_driver bebop_node.launch
 ```
+En su lugar, también se puede ejecutar el nodelet:
+```
+roslaunch bebop_tools bebop_nodelet_iv.launch
+```
+Para ambos casos, se sugiere subscribirse al tópico ```image_view/image``` para observar en tiemporeal la imágen de la cámara del Bebop.
+
 Estos programas se pueden usar como base para programas más complejos, pero eso requiere de mayor conocimiento del uso de los servomotores. Se sugiere leer las referencias [2-5] para mayores detalles.
 
 ## Autores y colaboradores
