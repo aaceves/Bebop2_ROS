@@ -43,11 +43,11 @@ Para ambos casos, se sugiere subscribirse al tópico ```image_view/image``` para
 
 Takeoff
 ```
-rostopic pub --once [namespace]/takeoff std_msgs/Empty
+rostopic pub --once bebop/takeoff std_msgs/Empty
 ```
 Land
 ```
-$ rostopic pub --once [namespace]/land std_msgs/Empty
+$ rostopic pub --once bebop/land std_msgs/Empty
 ```
 Otros comandos más complejos se pueden ejecutar siguiendo los pasos explicados en https://bebop-autonomy.readthedocs.io/en/latest/piloting.html.
 
