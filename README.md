@@ -15,18 +15,17 @@ Deberá contar con un drone BeBop1 o BeBop2 de Parrot [http://www.parrot.com/].
 </p>
 
 ## Proceso de instalación
-En una Terminal ejecutar las siguientes instrucciones:
+Asegúrese de estar conectado a Internet. En una Terminal ejecutar las siguientes instrucciones una por una:
 ```
 cd ~/catkin_ws
 git clone https://github.com/AutonomyLab/bebop_autonomy.git src/bebop_autonomy
-git clone https://github.com/AutonomyLab/parrot_arsdk.git src/parrot_arsdk                  (Ver referencia 6)
-
+git clone https://github.com/AutonomyLab/parrot_arsdk.git src/parrot_arsdk
 rosdep update
-rosdep install --from-paths src -i       (Darle Y como 5 veces ...)
-catkin build                             (Le toma unos minutos en terminar. Aparecerán algunso Warnings)
+rosdep install --from-paths src -i
+catkin build
 source devel/setup.bash
 ```
-El proceso de compilación debe terminar sin errores.
+En esta secuencias de comandos, deberá oprimir ```Y``` al menos unas cinco veces para continuar el proceso. Esto tomará algunos minutos. Aparecerán varios Warnings pero debe terminar sin errores.
 
 ## Conectarse al dron mediante un nodo de ROS
 Primero se debe encender el dron Bebop. Después de unos segundos, el drone levantará una mini-red WiFi con el nombre de ```Bebop``` seguido de un número (ejemplo: BeBop2-097345). Con la computadora conéctarse a dicha red del dron. No necesitará password. Una vez conectado verifique la dirección IP de su computadora (para un Bebop2, la dirección de la computadora es la 192.168.42.60. El dron tendrá la dirección 192.168.42.1). En una Terminal ejecute:
@@ -59,15 +58,21 @@ Se puede enviar un comando directamente a los tópicos del drone. Por ejemplo:
 
 Otros comandos más complejos se pueden ejecutar siguiendo los pasos explicados en [2] en la sección "Sending Commands to Bebop".
 
-
-
+Se puede controlador el Bebop usando un el teclado. Para ello, ejecute lo sigueinte en una Terminal:
+```
+cd ~/catkin_ws/src
+git clone https://github.com/yakovkor/keyboard-control-for-bebop-2-drone.git
+catkin build
+source devel/setup.bash
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+```
+Mayores detalles se podrán encontrar en [7].
 
 
 
 
 
 ```
-rostopic list
 rqt
 cd ~catkin_ws/datos
 rosbag record /bebop/image_raw
@@ -87,3 +92,4 @@ Ese paquete fue desarrollado en base al material originalmente publicado en [1] 
 4. Stack OverFlow, "How to fly a Parrot bebop drone in tum simulator?", [Online]. Available: https://stackoverflow.com/questions/41326090/how-to-fly-a-parrot-bebop-drone-in-tum-simulator, [Accessed: 03-Aug-2019].
 5. Giuseppe Silano, "BebopS simulator for Parrot Bebop 2", University of Sannio in Benevento, [Online]. Available: https://github.com/gsilano/BebopS, [Accessed: 03-Aug-2019].
 6. Thomas Bamford, "BeBop2 update installation", [Online]. Available: https://github.com/AutonomyLab/bebop_autonomy/blob/8392f055b7ef0205b357f0c2d4088389910a1151/docs/installation.rst, [Accessed: 03-Aug-2019].
+7. Yakovkor, "Generic Keyboard Teleop for ROS for BeBop", [Online]. Available: https://github.com/yakovkor/keyboard-control-for-bebop-2-drone, [Accessed: 03-Aug-2019].
