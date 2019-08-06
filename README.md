@@ -28,13 +28,13 @@ source devel/setup.bash
 En esta secuencias de comandos, deberá oprimir ```Y``` al menos unas cinco veces para continuar el proceso. Esto tomará algunos minutos. Aparecerán varios Warnings pero debe terminar sin errores.
 
 ## Conectarse al dron mediante un nodo de ROS
-Primero se debe encender el dron Bebop. Después de unos segundos, el drone levantará una mini-red WiFi con el nombre de ```Bebop``` seguido de un número (ejemplo: BeBop2-097345). Con la computadora conéctarse a dicha red del dron. No necesitará password. Una vez conectado verifique la dirección IP de su computadora (para un Bebop2, la dirección de la computadora es la 192.168.42.60. El dron tendrá la dirección 192.168.42.1). En una Terminal ejecute:
+Primero se debe encender el drone Bebop. Después de unos segundos, el drone levantará una mini-red WiFi con el nombre de ```Bebop``` seguido de un número (ejemplo: BeBop2-097345). Con la computadora conéctarse a dicha red del dron. No necesitará password. Una vez conectado verifique la dirección IP de su computadora (para un Bebop2, la dirección de la computadora es la 192.168.42.60. El dron tendrá la dirección 192.168.42.1). En una Terminal ejecute:
 ```
 ping 192.168.42.1
 ```
 Debe responder con un mensaje del tiempo de respuesta. Terminar el proceso con la combinación de teclas ```Ctrl+C```.
 
-Para lanzar el nodo que conecta la coputadora con el dron, ejecutar el siguiente comando en una Terminal:
+Para lanzar el nodo que conecta la coputadora con el drone, ejecutar el siguiente comando en una Terminal:
 ```
 roslaunch bebop_driver bebop_node.launch
 ```
@@ -58,23 +58,29 @@ Se puede enviar un comando directamente a los tópicos del drone. Por ejemplo:
 
 Otros comandos más complejos se pueden ejecutar siguiendo los pasos explicados en [2] en la sección "Sending Commands to Bebop".
 
-Se puede controlador el Bebop usando un el teclado. Para ello, ejecute lo sigueinte en una Terminal:
+Se puede controlador el Bebop usando el teclado. Para ello, instale el siguiente paquete:
 ```
 cd ~/catkin_ws/src
 git clone https://github.com/yakovkor/keyboard-control-for-bebop-2-drone.git
 catkin build
 source devel/setup.bash
+```
+Luego, ejecute lo sigueinte en una Terminal:
+```
 rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 ```
 Mayores detalles se podrán encontrar en [7].
-
-
-
-
-
+    
+Otros comandos útiles son:
 ```
 rqt
-cd ~catkin_ws/datos
+```
+    
+Para grabar lo que sucede con el drone en un rosbag:
+```
+cd ~/catkin_ws
+mkdir datos
+cd datos
 rosbag record /bebop/image_raw
 rosbag play -l namefile.bag
 ```
