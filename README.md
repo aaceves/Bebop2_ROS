@@ -48,11 +48,11 @@ Para ambos casos, se sugiere subscribirse al tópico ```image_view/image``` para
 
 ## Enviar comandos al Bebop
 
-Takeoff
+Takeoff:
 ```
 rostopic pub --once bebop/takeoff std_msgs/Empty
 ```
-Land
+Land:
 ```
 $ rostopic pub --once bebop/land std_msgs/Empty
 ```
