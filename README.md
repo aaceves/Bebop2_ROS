@@ -44,7 +44,7 @@ En su lugar, también se puede ejecutar el nodelet:
 ```
 roslaunch bebop_tools bebop_nodelet_iv.launch
 ```
-Para ambos casos, se sugiere subscribirse al tópico ```image_view/image``` para observar en tiemporeal la imágen de la cámara del Bebop.
+Para ambos casos, se sugiere subscribirse al tópico ```image_view/image``` para observar en tiempo-real la imágen de la cámara del Bebop.
 
 ## Enviar comandos al Bebop
 
