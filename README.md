@@ -47,7 +47,23 @@ Para ambos casos, se sugiere subscribirse al tópico ```bebop/image_raw``` para 
 ```
 rosrun image_view image_view image:=/bebop/image_raw
 ``` 
-Debe observar la imagen den tiempo real de la cámara frontal del BeBop.
+Debe observar la imagen de la cámara frontal del BeBop.
+
+## Enviar comandos al Bebop
+Se puede enviar un comando directamente a los tópicos del drone. Por ejemplo:
+
+| Descripción | Comando |
+| --- | --- |
+| Takeoff: | ``` rostopic pub --once bebop/takeoff std_msgs/Empty ```|
+| Land: | ``` rostopic pub --once bebop/land std_msgs/Empty```|
+
+Otros comandos más complejos se pueden ejecutar siguiendo los pasos explicados en [2] en la sección "Sending Commands to Bebop".
+
+
+
+
+
+
 
 
 ```
@@ -58,14 +74,6 @@ rosbag record /bebop/image_raw
 rosbag play -l namefile.bag
 ```
 
-## Enviar comandos al Bebop
-Se puede enviar un comando directamente a los tópicos del drone. Por ejemplo:
-| Descripción | Comando |
-| --- | --- |
-| Takeoff: | ``` rostopic pub --once bebop/takeoff std_msgs/Empty ```|
-| Land: | ``` rostopic pub --once bebop/land std_msgs/Empty```|
-
-Otros comandos más complejos se pueden ejecutar siguiendo los pasos explicados en [2] en la sección "Sending Commands to Bebop".
 
 Esta información se pueden usar como base para programas más complejos, pero eso requiere de mayor conocimiento del uso de los tópicos de BeBop. Se sugiere leer las referencias [1-5] para mayores detalles.
 
