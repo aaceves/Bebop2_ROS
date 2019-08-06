@@ -19,14 +19,17 @@ En una Terminal ejecutar las siguientes instrucciones:
 ```
 cd ~/catkin_ws
 git clone https://github.com/AutonomyLab/bebop_autonomy.git src/bebop_autonomy
+git clone https://github.com/AutonomyLab/parrot_arsdk.git src/parrot_arsdk
+
 rosdep update
 rosdep install --from-paths src -i
 catkin build
 source devel/setup.bash
 ```
 El proceso de compilación debe terminar sin errores.
+Al día 5 de agosto de 2019, se produce un error en ```rosdep update``` y ```catkin build``` porque falta un paquete ```parrot_arsdk```. Para corregirlo usar la nota publicada en [], la cual indica clonar el parrot_arsdk: ``` git clone https://github.com/AutonomyLab/parrot_arsdk.git src/parrot_arsdk ```
 
-NOTA: Según Oyuki
+NOTA: Según Oyuki [No ha servido de nada]
 ```
 cd ~/cadi2018/
 git clone https://github.com/AutonomyLab/bebop_autonomy.git src/bebop_autonomy
