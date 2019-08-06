@@ -25,6 +25,13 @@ catkin build
 ```
 El proceso de compilación debe terminar sin errores.
 
+NOTA: Según Oyuki
+```
+git clone https://github.com/AutonomyLab/ardrone autonomy.git
+rosdep install --from-paths src -ignore-src -rosdistro kinetic -y
+```
+FIN NOTA:
+
 
 ## Conectarse al dron mediante un nodo de ROS
 Primero se debe encender el dron Bebop. Después de unos segundos, el drone levantará una mini-red WiFi con el nombre de ```Bebop``` seguido de un número (ejemplo: BeBop2-097345). Con la computadora conéctarse a dicha red del dron. No necesitará password. Una vez conectado verifique la dirección IP de su computadora (para un Bebop2, la dirección de la computadora es la 192.168.42.60. El dron tendrá la dirección 192.168.42.1).
