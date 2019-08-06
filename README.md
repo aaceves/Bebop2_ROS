@@ -62,7 +62,9 @@ Se puede controlador el Bebop usando el teclado. Para ello, instale el siguiente
 ```
 cd ~/catkin_ws/src
 git clone https://github.com/yakovkor/keyboard-control-for-bebop-2-drone.git
-cd ..
+cd keyboard-control-for-bebop-2-drone
+chmod +x teleop_twist_keyboard.py
+cd ~/catkin_ws
 catkin build
 source devel/setup.bash
 ```
