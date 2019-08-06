@@ -27,7 +27,7 @@ catkin build
 source devel/setup.bash
 ```
 El proceso de compilación debe terminar sin errores.
-Al día 5 de agosto de 2019, se produce un error en ```rosdep update``` y ```catkin build``` porque falta un paquete ```parrot_arsdk```. Para corregirlo usar la nota publicada en [], la cual indica clonar el parrot_arsdk: ``` git clone https://github.com/AutonomyLab/parrot_arsdk.git src/parrot_arsdk ```
+Al día 5 de agosto de 2019, se produce un error en ```rosdep update``` y ```catkin build``` porque falta un paquete ```parrot_arsdk```. Para corregirlo usar la nota publicada en [https://github.com/AutonomyLab/bebop_autonomy/blob/8392f055b7ef0205b357f0c2d4088389910a1151/docs/installation.rst], la cual indica clonar el parrot_arsdk: ``` git clone https://github.com/AutonomyLab/parrot_arsdk.git src/parrot_arsdk ```
 
 NOTA: Según Oyuki [No ha servido de nada]
 ```
